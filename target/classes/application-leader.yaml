@@ -1,0 +1,18 @@
+server:
+  port: 8080
+
+kvstore:
+  node-id: node0
+  mode: leader-follower
+  role: leader
+  peers:
+    - http://localhost:8081
+    - http://localhost:8082
+    - http://localhost:8083
+    - http://localhost:8084
+  quorum:
+    write: 3
+    read: 3
+  delays:
+    write-delay-ms: 200
+    read-delay-ms: 50

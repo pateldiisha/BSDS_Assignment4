@@ -1,0 +1,437 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" version="3.0.2" name="com.cs6650.kvstore.LeaderFollowerConsistencyTest" time="5.579" tests="3" errors="0" skipped="0" failures="0" flakes="0">
+  <properties>
+    <property name="java.specification.version" value="17"/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.class.path" value="/Users/jasmainekhale/Desktop/kv-service/target/test-classes:/Users/jasmainekhale/Desktop/kv-service/target/classes:/Users/jasmainekhale/.m2/repository/org/springframework/boot/spring-boot-starter-web/3.5.13/spring-boot-starter-web-3.5.13.jar:/Users/jasmainekhale/.m2/repository/org/springframework/boot/spring-boot-starter/3.5.13/spring-boot-starter-3.5.13.jar:/Users/jasmainekhale/.m2/repository/org/springframework/boot/spring-boot/3.5.13/spring-boot-3.5.13.jar:/Users/jasmainekhale/.m2/repository/org/springframework/boot/spring-boot-autoconfigure/3.5.13/spring-boot-autoconfigure-3.5.13.jar:/Users/jasmainekhale/.m2/repository/org/springframework/boot/spring-boot-starter-logging/3.5.13/spring-boot-starter-logging-3.5.13.jar:/Users/jasmainekhale/.m2/repository/ch/qos/logback/logback-classic/1.5.32/logback-classic-1.5.32.jar:/Users/jasmainekhale/.m2/repository/ch/qos/logback/logback-core/1.5.32/logback-core-1.5.32.jar:/Users/jasmainekhale/.m2/repository/org/apache/logging/log4j/log4j-to-slf4j/2.24.3/log4j-to-slf4j-2.24.3.jar:/Users/jasmainekhale/.m2/repository/org/apache/logging/log4j/log4j-api/2.24.3/log4j-api-2.24.3.jar:/Users/jasmainekhale/.m2/repository/org/slf4j/jul-to-slf4j/2.0.17/jul-to-slf4j-2.0.17.jar:/Users/jasmainekhale/.m2/repository/jakarta/annotation/jakarta.annotation-api/2.1.1/jakarta.annotation-api-2.1.1.jar:/Users/jasmainekhale/.m2/repository/org/yaml/snakeyaml/2.4/snakeyaml-2.4.jar:/Users/jasmainekhale/.m2/repository/org/springframework/boot/spring-boot-starter-json/3.5.13/spring-boot-starter-json-3.5.13.jar:/Users/jasmainekhale/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.21.2/jackson-databind-2.21.2.jar:/Users/jasmainekhale/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.21/jackson-annotations-2.21.jar:/Users/jasmainekhale/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.21.2/jackson-core-2.21.2.jar:/Users/jasmainekhale/.m2/repository/com/fasterxml/jackson/datatype/jackson-datatype-jdk8/2.21.2/jackson-datatype-jdk8-2.21.2.jar:/Users/jasmainekhale/.m2/repository/com/fasterxml/jackson/datatype/jackson-datatype-jsr310/2.21.2/jackson-datatype-jsr310-2.21.2.jar:/Users/jasmainekhale/.m2/repository/com/fasterxml/jackson/module/jackson-module-parameter-names/2.21.2/jackson-module-parameter-names-2.21.2.jar:/Users/jasmainekhale/.m2/repository/org/springframework/boot/spring-boot-starter-tomcat/3.5.13/spring-boot-starter-tomcat-3.5.13.jar:/Users/jasmainekhale/.m2/repository/org/apache/tomcat/embed/tomcat-embed-core/10.1.53/tomcat-embed-core-10.1.53.jar:/Users/jasmainekhale/.m2/repository/org/apache/tomcat/embed/tomcat-embed-el/10.1.53/tomcat-embed-el-10.1.53.jar:/Users/jasmainekhale/.m2/repository/org/apache/tomcat/embed/tomcat-embed-websocket/10.1.53/tomcat-embed-websocket-10.1.53.jar:/Users/jasmainekhale/.m2/repository/org/springframework/spring-web/6.2.17/spring-web-6.2.17.jar:/Users/jasmainekhale/.m2/repository/org/springframework/spring-beans/6.2.17/spring-beans-6.2.17.jar:/Users/jasmainekhale/.m2/repository/io/micrometer/micrometer-observation/1.15.10/micrometer-observation-1.15.10.jar:/Users/jasmainekhale/.m2/repository/io/micrometer/micrometer-commons/1.15.10/micrometer-commons-1.15.10.jar:/Users/jasmainekhale/.m2/repository/org/springframework/spring-webmvc/6.2.17/spring-webmvc-6.2.17.jar:/Users/jasmainekhale/.m2/repository/org/springframework/spring-aop/6.2.17/spring-aop-6.2.17.jar:/Users/jasmainekhale/.m2/repository/org/springframework/spring-context/6.2.17/spring-context-6.2.17.jar:/Users/jasmainekhale/.m2/repository/org/springframework/spring-expression/6.2.17/spring-expression-6.2.17.jar:/Users/jasmainekhale/.m2/repository/org/projectlombok/lombok/1.18.44/lombok-1.18.44.jar:/Users/jasmainekhale/.m2/repository/org/springframework/boot/spring-boot-starter-test/3.5.13/spring-boot-starter-test-3.5.13.jar:/Users/jasmainekhale/.m2/repository/org/springframework/boot/spring-boot-test/3.5.13/spring-boot-test-3.5.13.jar:/Users/jasmainekhale/.m2/repository/org/springframework/boot/spring-boot-test-autoconfigure/3.5.13/spring-boot-test-autoconfigure-3.5.13.jar:/Users/jasmainekhale/.m2/repository/com/jayway/jsonpath/json-path/2.9.0/json-path-2.9.0.jar:/Users/jasmainekhale/.m2/repository/org/slf4j/slf4j-api/2.0.17/slf4j-api-2.0.17.jar:/Users/jasmainekhale/.m2/repository/jakarta/xml/bind/jakarta.xml.bind-api/4.0.4/jakarta.xml.bind-api-4.0.4.jar:/Users/jasmainekhale/.m2/repository/jakarta/activation/jakarta.activation-api/2.1.4/jakarta.activation-api-2.1.4.jar:/Users/jasmainekhale/.m2/repository/net/minidev/json-smart/2.5.2/json-smart-2.5.2.jar:/Users/jasmainekhale/.m2/repository/net/minidev/accessors-smart/2.5.2/accessors-smart-2.5.2.jar:/Users/jasmainekhale/.m2/repository/org/ow2/asm/asm/9.7.1/asm-9.7.1.jar:/Users/jasmainekhale/.m2/repository/org/assertj/assertj-core/3.27.7/assertj-core-3.27.7.jar:/Users/jasmainekhale/.m2/repository/net/bytebuddy/byte-buddy/1.17.8/byte-buddy-1.17.8.jar:/Users/jasmainekhale/.m2/repository/org/awaitility/awaitility/4.2.2/awaitility-4.2.2.jar:/Users/jasmainekhale/.m2/repository/org/hamcrest/hamcrest/3.0/hamcrest-3.0.jar:/Users/jasmainekhale/.m2/repository/org/junit/jupiter/junit-jupiter/5.12.2/junit-jupiter-5.12.2.jar:/Users/jasmainekhale/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.12.2/junit-jupiter-api-5.12.2.jar:/Users/jasmainekhale/.m2/repository/org/opentest4j/opentest4j/1.3.0/opentest4j-1.3.0.jar:/Users/jasmainekhale/.m2/repository/org/junit/platform/junit-platform-commons/1.12.2/junit-platform-commons-1.12.2.jar:/Users/jasmainekhale/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/Users/jasmainekhale/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.12.2/junit-jupiter-params-5.12.2.jar:/Users/jasmainekhale/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.12.2/junit-jupiter-engine-5.12.2.jar:/Users/jasmainekhale/.m2/repository/org/junit/platform/junit-platform-engine/1.12.2/junit-platform-engine-1.12.2.jar:/Users/jasmainekhale/.m2/repository/org/mockito/mockito-core/5.17.0/mockito-core-5.17.0.jar:/Users/jasmainekhale/.m2/repository/net/bytebuddy/byte-buddy-agent/1.17.8/byte-buddy-agent-1.17.8.jar:/Users/jasmainekhale/.m2/repository/org/objenesis/objenesis/3.3/objenesis-3.3.jar:/Users/jasmainekhale/.m2/repository/org/mockito/mockito-junit-jupiter/5.17.0/mockito-junit-jupiter-5.17.0.jar:/Users/jasmainekhale/.m2/repository/org/skyscreamer/jsonassert/1.5.3/jsonassert-1.5.3.jar:/Users/jasmainekhale/.m2/repository/com/vaadin/external/google/android-json/0.0.20131108.vaadin1/android-json-0.0.20131108.vaadin1.jar:/Users/jasmainekhale/.m2/repository/org/springframework/spring-core/6.2.17/spring-core-6.2.17.jar:/Users/jasmainekhale/.m2/repository/org/springframework/spring-jcl/6.2.17/spring-jcl-6.2.17.jar:/Users/jasmainekhale/.m2/repository/org/springframework/spring-test/6.2.17/spring-test-6.2.17.jar:/Users/jasmainekhale/.m2/repository/org/xmlunit/xmlunit-core/2.10.4/xmlunit-core-2.10.4.jar:"/>
+    <property name="java.vm.vendor" value="Homebrew"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="catalina.useNaming" value="false"/>
+    <property name="java.vendor.url" value="https://github.com/Homebrew/homebrew-core/issues"/>
+    <property name="user.timezone" value="America/Los_Angeles"/>
+    <property name="os.name" value="Mac OS X"/>
+    <property name="java.vm.specification.version" value="17"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="user.country" value="IN"/>
+    <property name="sun.boot.library.path" value="/opt/homebrew/Cellar/openjdk@17/17.0.17/libexec/openjdk.jdk/Contents/Home/lib"/>
+    <property name="sun.java.command" value="/Users/jasmainekhale/Desktop/kv-service/target/surefire/surefirebooter-20260408151344976_3.jar /Users/jasmainekhale/Desktop/kv-service/target/surefire 2026-04-08T15-13-44_941-jvmRun1 surefire-20260408151344976_1tmp surefire_0-20260408151344976_2tmp"/>
+    <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="surefire.test.class.path" value="/Users/jasmainekhale/Desktop/kv-service/target/test-classes:/Users/jasmainekhale/Desktop/kv-service/target/classes:/Users/jasmainekhale/.m2/repository/org/springframework/boot/spring-boot-starter-web/3.5.13/spring-boot-starter-web-3.5.13.jar:/Users/jasmainekhale/.m2/repository/org/springframework/boot/spring-boot-starter/3.5.13/spring-boot-starter-3.5.13.jar:/Users/jasmainekhale/.m2/repository/org/springframework/boot/spring-boot/3.5.13/spring-boot-3.5.13.jar:/Users/jasmainekhale/.m2/repository/org/springframework/boot/spring-boot-autoconfigure/3.5.13/spring-boot-autoconfigure-3.5.13.jar:/Users/jasmainekhale/.m2/repository/org/springframework/boot/spring-boot-starter-logging/3.5.13/spring-boot-starter-logging-3.5.13.jar:/Users/jasmainekhale/.m2/repository/ch/qos/logback/logback-classic/1.5.32/logback-classic-1.5.32.jar:/Users/jasmainekhale/.m2/repository/ch/qos/logback/logback-core/1.5.32/logback-core-1.5.32.jar:/Users/jasmainekhale/.m2/repository/org/apache/logging/log4j/log4j-to-slf4j/2.24.3/log4j-to-slf4j-2.24.3.jar:/Users/jasmainekhale/.m2/repository/org/apache/logging/log4j/log4j-api/2.24.3/log4j-api-2.24.3.jar:/Users/jasmainekhale/.m2/repository/org/slf4j/jul-to-slf4j/2.0.17/jul-to-slf4j-2.0.17.jar:/Users/jasmainekhale/.m2/repository/jakarta/annotation/jakarta.annotation-api/2.1.1/jakarta.annotation-api-2.1.1.jar:/Users/jasmainekhale/.m2/repository/org/yaml/snakeyaml/2.4/snakeyaml-2.4.jar:/Users/jasmainekhale/.m2/repository/org/springframework/boot/spring-boot-starter-json/3.5.13/spring-boot-starter-json-3.5.13.jar:/Users/jasmainekhale/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.21.2/jackson-databind-2.21.2.jar:/Users/jasmainekhale/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.21/jackson-annotations-2.21.jar:/Users/jasmainekhale/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.21.2/jackson-core-2.21.2.jar:/Users/jasmainekhale/.m2/repository/com/fasterxml/jackson/datatype/jackson-datatype-jdk8/2.21.2/jackson-datatype-jdk8-2.21.2.jar:/Users/jasmainekhale/.m2/repository/com/fasterxml/jackson/datatype/jackson-datatype-jsr310/2.21.2/jackson-datatype-jsr310-2.21.2.jar:/Users/jasmainekhale/.m2/repository/com/fasterxml/jackson/module/jackson-module-parameter-names/2.21.2/jackson-module-parameter-names-2.21.2.jar:/Users/jasmainekhale/.m2/repository/org/springframework/boot/spring-boot-starter-tomcat/3.5.13/spring-boot-starter-tomcat-3.5.13.jar:/Users/jasmainekhale/.m2/repository/org/apache/tomcat/embed/tomcat-embed-core/10.1.53/tomcat-embed-core-10.1.53.jar:/Users/jasmainekhale/.m2/repository/org/apache/tomcat/embed/tomcat-embed-el/10.1.53/tomcat-embed-el-10.1.53.jar:/Users/jasmainekhale/.m2/repository/org/apache/tomcat/embed/tomcat-embed-websocket/10.1.53/tomcat-embed-websocket-10.1.53.jar:/Users/jasmainekhale/.m2/repository/org/springframework/spring-web/6.2.17/spring-web-6.2.17.jar:/Users/jasmainekhale/.m2/repository/org/springframework/spring-beans/6.2.17/spring-beans-6.2.17.jar:/Users/jasmainekhale/.m2/repository/io/micrometer/micrometer-observation/1.15.10/micrometer-observation-1.15.10.jar:/Users/jasmainekhale/.m2/repository/io/micrometer/micrometer-commons/1.15.10/micrometer-commons-1.15.10.jar:/Users/jasmainekhale/.m2/repository/org/springframework/spring-webmvc/6.2.17/spring-webmvc-6.2.17.jar:/Users/jasmainekhale/.m2/repository/org/springframework/spring-aop/6.2.17/spring-aop-6.2.17.jar:/Users/jasmainekhale/.m2/repository/org/springframework/spring-context/6.2.17/spring-context-6.2.17.jar:/Users/jasmainekhale/.m2/repository/org/springframework/spring-expression/6.2.17/spring-expression-6.2.17.jar:/Users/jasmainekhale/.m2/repository/org/projectlombok/lombok/1.18.44/lombok-1.18.44.jar:/Users/jasmainekhale/.m2/repository/org/springframework/boot/spring-boot-starter-test/3.5.13/spring-boot-starter-test-3.5.13.jar:/Users/jasmainekhale/.m2/repository/org/springframework/boot/spring-boot-test/3.5.13/spring-boot-test-3.5.13.jar:/Users/jasmainekhale/.m2/repository/org/springframework/boot/spring-boot-test-autoconfigure/3.5.13/spring-boot-test-autoconfigure-3.5.13.jar:/Users/jasmainekhale/.m2/repository/com/jayway/jsonpath/json-path/2.9.0/json-path-2.9.0.jar:/Users/jasmainekhale/.m2/repository/org/slf4j/slf4j-api/2.0.17/slf4j-api-2.0.17.jar:/Users/jasmainekhale/.m2/repository/jakarta/xml/bind/jakarta.xml.bind-api/4.0.4/jakarta.xml.bind-api-4.0.4.jar:/Users/jasmainekhale/.m2/repository/jakarta/activation/jakarta.activation-api/2.1.4/jakarta.activation-api-2.1.4.jar:/Users/jasmainekhale/.m2/repository/net/minidev/json-smart/2.5.2/json-smart-2.5.2.jar:/Users/jasmainekhale/.m2/repository/net/minidev/accessors-smart/2.5.2/accessors-smart-2.5.2.jar:/Users/jasmainekhale/.m2/repository/org/ow2/asm/asm/9.7.1/asm-9.7.1.jar:/Users/jasmainekhale/.m2/repository/org/assertj/assertj-core/3.27.7/assertj-core-3.27.7.jar:/Users/jasmainekhale/.m2/repository/net/bytebuddy/byte-buddy/1.17.8/byte-buddy-1.17.8.jar:/Users/jasmainekhale/.m2/repository/org/awaitility/awaitility/4.2.2/awaitility-4.2.2.jar:/Users/jasmainekhale/.m2/repository/org/hamcrest/hamcrest/3.0/hamcrest-3.0.jar:/Users/jasmainekhale/.m2/repository/org/junit/jupiter/junit-jupiter/5.12.2/junit-jupiter-5.12.2.jar:/Users/jasmainekhale/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.12.2/junit-jupiter-api-5.12.2.jar:/Users/jasmainekhale/.m2/repository/org/opentest4j/opentest4j/1.3.0/opentest4j-1.3.0.jar:/Users/jasmainekhale/.m2/repository/org/junit/platform/junit-platform-commons/1.12.2/junit-platform-commons-1.12.2.jar:/Users/jasmainekhale/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/Users/jasmainekhale/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.12.2/junit-jupiter-params-5.12.2.jar:/Users/jasmainekhale/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.12.2/junit-jupiter-engine-5.12.2.jar:/Users/jasmainekhale/.m2/repository/org/junit/platform/junit-platform-engine/1.12.2/junit-platform-engine-1.12.2.jar:/Users/jasmainekhale/.m2/repository/org/mockito/mockito-core/5.17.0/mockito-core-5.17.0.jar:/Users/jasmainekhale/.m2/repository/net/bytebuddy/byte-buddy-agent/1.17.8/byte-buddy-agent-1.17.8.jar:/Users/jasmainekhale/.m2/repository/org/objenesis/objenesis/3.3/objenesis-3.3.jar:/Users/jasmainekhale/.m2/repository/org/mockito/mockito-junit-jupiter/5.17.0/mockito-junit-jupiter-5.17.0.jar:/Users/jasmainekhale/.m2/repository/org/skyscreamer/jsonassert/1.5.3/jsonassert-1.5.3.jar:/Users/jasmainekhale/.m2/repository/com/vaadin/external/google/android-json/0.0.20131108.vaadin1/android-json-0.0.20131108.vaadin1.jar:/Users/jasmainekhale/.m2/repository/org/springframework/spring-core/6.2.17/spring-core-6.2.17.jar:/Users/jasmainekhale/.m2/repository/org/springframework/spring-jcl/6.2.17/spring-jcl-6.2.17.jar:/Users/jasmainekhale/.m2/repository/org/springframework/spring-test/6.2.17/spring-test-6.2.17.jar:/Users/jasmainekhale/.m2/repository/org/xmlunit/xmlunit-core/2.10.4/xmlunit-core-2.10.4.jar:"/>
+    <property name="test" value="LeaderFollowerConsistencyTest"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="/Users/jasmainekhale"/>
+    <property name="user.language" value="en"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2025-10-21"/>
+    <property name="java.home" value="/opt/homebrew/Cellar/openjdk@17/17.0.17/libexec/openjdk.jdk/Contents/Home"/>
+    <property name="file.separator" value="/"/>
+    <property name="basedir" value="/Users/jasmainekhale/Desktop/kv-service"/>
+    <property name="java.vm.compressedOopsMode" value="Zero based"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="FILE_LOG_CHARSET" value="UTF-8"/>
+    <property name="java.awt.headless" value="true"/>
+    <property name="surefire.real.class.path" value="/Users/jasmainekhale/Desktop/kv-service/target/surefire/surefirebooter-20260408151344976_3.jar"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="java.runtime.version" value="17.0.17+0"/>
+    <property name="user.name" value="jasmainekhale"/>
+    <property name="path.separator" value=":"/>
+    <property name="os.version" value="15.7.4"/>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="java.vendor.version" value="Homebrew"/>
+    <property name="localRepository" value="/Users/jasmainekhale/.m2/repository"/>
+    <property name="java.vendor.url.bug" value="https://github.com/Homebrew/homebrew-core/issues"/>
+    <property name="java.io.tmpdir" value="/var/folders/xm/jrwnctvx1ts9zgwtckz9qwv40000gn/T/"/>
+    <property name="catalina.home" value="/private/var/folders/xm/jrwnctvx1ts9zgwtckz9qwv40000gn/T/tomcat.28080.14537394309666353677"/>
+    <property name="java.version" value="17.0.17"/>
+    <property name="user.dir" value="/Users/jasmainekhale/Desktop/kv-service"/>
+    <property name="os.arch" value="aarch64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="PID" value="22948"/>
+    <property name="CONSOLE_LOG_CHARSET" value="UTF-8"/>
+    <property name="catalina.base" value="/private/var/folders/xm/jrwnctvx1ts9zgwtckz9qwv40000gn/T/tomcat.28084.15520765249338230860"/>
+    <property name="native.encoding" value="UTF-8"/>
+    <property name="java.library.path" value="/Users/jasmainekhale/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:."/>
+    <property name="java.vm.info" value="mixed mode, sharing"/>
+    <property name="java.vendor" value="Homebrew"/>
+    <property name="java.vm.version" value="17.0.17+0"/>
+    <property name="java.specification.maintenance.version" value="1"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeBig"/>
+    <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="java.class.version" value="61.0"/>
+  </properties>
+  <testcase name="test1_strongConsistency_w5_readLeaderAfterAck" classname="com.cs6650.kvstore.LeaderFollowerConsistencyTest" time="2.419">
+    <system-out><![CDATA[
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::               (v3.5.13)
+
+2026-04-08T15:13:45.535-07:00  INFO 22948 --- [           main] o.a.maven.surefire.booter.ForkedBooter   : Starting ForkedBooter v3.5.5 using Java 17.0.17 with PID 22948 (started by jasmainekhale in /Users/jasmainekhale/Desktop/kv-service)
+2026-04-08T15:13:45.537-07:00  INFO 22948 --- [           main] o.a.maven.surefire.booter.ForkedBooter   : The following 1 profile is active: "test"
+2026-04-08T15:13:45.868-07:00  INFO 22948 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 28080 (http)
+2026-04-08T15:13:45.874-07:00  INFO 22948 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-04-08T15:13:45.874-07:00  INFO 22948 --- [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.53]
+2026-04-08T15:13:45.889-07:00  INFO 22948 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-04-08T15:13:45.890-07:00  INFO 22948 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 340 ms
+2026-04-08T15:13:46.026-07:00  INFO 22948 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 28080 (http) with context path '/'
+2026-04-08T15:13:46.031-07:00  INFO 22948 --- [           main] o.a.maven.surefire.booter.ForkedBooter   : Started ForkedBooter in 0.67 seconds (process running for 1.019)
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::               (v3.5.13)
+
+2026-04-08T15:13:46.041-07:00  INFO 22948 --- [           main] o.a.maven.surefire.booter.ForkedBooter   : Starting ForkedBooter v3.5.5 using Java 17.0.17 with PID 22948 (started by jasmainekhale in /Users/jasmainekhale/Desktop/kv-service)
+2026-04-08T15:13:46.041-07:00  INFO 22948 --- [           main] o.a.maven.surefire.booter.ForkedBooter   : The following 1 profile is active: "test"
+2026-04-08T15:13:46.095-07:00  INFO 22948 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 28081 (http)
+2026-04-08T15:13:46.095-07:00  INFO 22948 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-04-08T15:13:46.096-07:00  INFO 22948 --- [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.53]
+2026-04-08T15:13:46.101-07:00  INFO 22948 --- [           main] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2026-04-08T15:13:46.101-07:00  INFO 22948 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 59 ms
+2026-04-08T15:13:46.133-07:00  INFO 22948 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 28081 (http) with context path '/'
+2026-04-08T15:13:46.135-07:00  INFO 22948 --- [           main] o.a.maven.surefire.booter.ForkedBooter   : Started ForkedBooter in 0.103 seconds (process running for 1.124)
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::               (v3.5.13)
+
+2026-04-08T15:13:46.144-07:00  INFO 22948 --- [           main] o.a.maven.surefire.booter.ForkedBooter   : Starting ForkedBooter v3.5.5 using Java 17.0.17 with PID 22948 (started by jasmainekhale in /Users/jasmainekhale/Desktop/kv-service)
+2026-04-08T15:13:46.144-07:00  INFO 22948 --- [           main] o.a.maven.surefire.booter.ForkedBooter   : The following 1 profile is active: "test"
+2026-04-08T15:13:46.188-07:00  INFO 22948 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 28082 (http)
+2026-04-08T15:13:46.188-07:00  INFO 22948 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-04-08T15:13:46.188-07:00  INFO 22948 --- [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.53]
+2026-04-08T15:13:46.192-07:00  INFO 22948 --- [           main] o.a.c.c.C.[Tomcat-2].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2026-04-08T15:13:46.192-07:00  INFO 22948 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 47 ms
+2026-04-08T15:13:46.218-07:00  INFO 22948 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 28082 (http) with context path '/'
+2026-04-08T15:13:46.219-07:00  INFO 22948 --- [           main] o.a.maven.surefire.booter.ForkedBooter   : Started ForkedBooter in 0.083 seconds (process running for 1.208)
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::               (v3.5.13)
+
+2026-04-08T15:13:46.227-07:00  INFO 22948 --- [           main] o.a.maven.surefire.booter.ForkedBooter   : Starting ForkedBooter v3.5.5 using Java 17.0.17 with PID 22948 (started by jasmainekhale in /Users/jasmainekhale/Desktop/kv-service)
+2026-04-08T15:13:46.227-07:00  INFO 22948 --- [           main] o.a.maven.surefire.booter.ForkedBooter   : The following 1 profile is active: "test"
+2026-04-08T15:13:46.266-07:00  INFO 22948 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 28083 (http)
+2026-04-08T15:13:46.267-07:00  INFO 22948 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-04-08T15:13:46.267-07:00  INFO 22948 --- [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.53]
+2026-04-08T15:13:46.271-07:00  INFO 22948 --- [           main] o.a.c.c.C.[Tomcat-3].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2026-04-08T15:13:46.271-07:00  INFO 22948 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 43 ms
+2026-04-08T15:13:46.294-07:00  INFO 22948 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 28083 (http) with context path '/'
+2026-04-08T15:13:46.296-07:00  INFO 22948 --- [           main] o.a.maven.surefire.booter.ForkedBooter   : Started ForkedBooter in 0.076 seconds (process running for 1.284)
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::               (v3.5.13)
+
+2026-04-08T15:13:46.304-07:00  INFO 22948 --- [           main] o.a.maven.surefire.booter.ForkedBooter   : Starting ForkedBooter v3.5.5 using Java 17.0.17 with PID 22948 (started by jasmainekhale in /Users/jasmainekhale/Desktop/kv-service)
+2026-04-08T15:13:46.304-07:00  INFO 22948 --- [           main] o.a.maven.surefire.booter.ForkedBooter   : The following 1 profile is active: "test"
+2026-04-08T15:13:46.399-07:00  INFO 22948 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 28084 (http)
+2026-04-08T15:13:46.399-07:00  INFO 22948 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-04-08T15:13:46.399-07:00  INFO 22948 --- [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.53]
+2026-04-08T15:13:46.407-07:00  INFO 22948 --- [           main] o.a.c.c.C.[Tomcat-4].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2026-04-08T15:13:46.409-07:00  INFO 22948 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 105 ms
+2026-04-08T15:13:46.460-07:00  INFO 22948 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 28084 (http) with context path '/'
+2026-04-08T15:13:46.461-07:00  INFO 22948 --- [           main] o.a.maven.surefire.booter.ForkedBooter   : Started ForkedBooter in 0.164 seconds (process running for 1.45)
+2026-04-08T15:13:46.509-07:00  INFO 22948 --- [io-28080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-04-08T15:13:46.509-07:00  INFO 22948 --- [io-28080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-04-08T15:13:46.509-07:00  INFO 22948 --- [io-28080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2026-04-08T15:13:46.530-07:00  INFO 22948 --- [io-28081-exec-1] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-04-08T15:13:46.530-07:00  INFO 22948 --- [io-28081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-04-08T15:13:46.531-07:00  INFO 22948 --- [io-28081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2026-04-08T15:13:46.532-07:00  INFO 22948 --- [io-28082-exec-1] o.a.c.c.C.[Tomcat-2].[localhost].[/]     : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-04-08T15:13:46.533-07:00  INFO 22948 --- [io-28082-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-04-08T15:13:46.533-07:00  INFO 22948 --- [io-28082-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2026-04-08T15:13:46.534-07:00  INFO 22948 --- [io-28083-exec-1] o.a.c.c.C.[Tomcat-3].[localhost].[/]     : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-04-08T15:13:46.534-07:00  INFO 22948 --- [io-28083-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-04-08T15:13:46.534-07:00  INFO 22948 --- [io-28083-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2026-04-08T15:13:46.536-07:00  INFO 22948 --- [io-28084-exec-1] o.a.c.c.C.[Tomcat-4].[localhost].[/]     : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-04-08T15:13:46.536-07:00  INFO 22948 --- [io-28084-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-04-08T15:13:46.536-07:00  INFO 22948 --- [io-28084-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2026-04-08T15:13:47.722-07:00  INFO 22948 --- [           main] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2026-04-08T15:13:47.727-07:00  INFO 22948 --- [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2026-04-08T15:13:47.732-07:00  INFO 22948 --- [           main] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2026-04-08T15:13:47.733-07:00  INFO 22948 --- [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2026-04-08T15:13:47.734-07:00  INFO 22948 --- [           main] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2026-04-08T15:13:47.735-07:00  INFO 22948 --- [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2026-04-08T15:13:47.737-07:00  INFO 22948 --- [           main] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2026-04-08T15:13:47.738-07:00  INFO 22948 --- [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2026-04-08T15:13:47.739-07:00  INFO 22948 --- [           main] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2026-04-08T15:13:47.740-07:00  INFO 22948 --- [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+]]></system-out>
+  </testcase>
+  <testcase name="test2_strongConsistency_w5_r1_readFollowerAfterAck" classname="com.cs6650.kvstore.LeaderFollowerConsistencyTest" time="1.521">
+    <system-out><![CDATA[
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::               (v3.5.13)
+
+2026-04-08T15:13:47.754-07:00  INFO 22948 --- [           main] o.a.maven.surefire.booter.ForkedBooter   : Starting ForkedBooter v3.5.5 using Java 17.0.17 with PID 22948 (started by jasmainekhale in /Users/jasmainekhale/Desktop/kv-service)
+2026-04-08T15:13:47.754-07:00  INFO 22948 --- [           main] o.a.maven.surefire.booter.ForkedBooter   : The following 1 profile is active: "test"
+2026-04-08T15:13:47.799-07:00  INFO 22948 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 28080 (http)
+2026-04-08T15:13:47.800-07:00  INFO 22948 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-04-08T15:13:47.800-07:00  INFO 22948 --- [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.53]
+2026-04-08T15:13:47.804-07:00  INFO 22948 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-04-08T15:13:47.804-07:00  INFO 22948 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 50 ms
+2026-04-08T15:13:47.824-07:00  INFO 22948 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 28080 (http) with context path '/'
+2026-04-08T15:13:47.826-07:00  INFO 22948 --- [           main] o.a.maven.surefire.booter.ForkedBooter   : Started ForkedBooter in 0.081 seconds (process running for 2.814)
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::               (v3.5.13)
+
+2026-04-08T15:13:47.833-07:00  INFO 22948 --- [           main] o.a.maven.surefire.booter.ForkedBooter   : Starting ForkedBooter v3.5.5 using Java 17.0.17 with PID 22948 (started by jasmainekhale in /Users/jasmainekhale/Desktop/kv-service)
+2026-04-08T15:13:47.834-07:00  INFO 22948 --- [           main] o.a.maven.surefire.booter.ForkedBooter   : The following 1 profile is active: "test"
+2026-04-08T15:13:47.872-07:00  INFO 22948 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 28081 (http)
+2026-04-08T15:13:47.872-07:00  INFO 22948 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-04-08T15:13:47.872-07:00  INFO 22948 --- [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.53]
+2026-04-08T15:13:47.876-07:00  INFO 22948 --- [           main] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2026-04-08T15:13:47.876-07:00  INFO 22948 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 42 ms
+2026-04-08T15:13:47.894-07:00  INFO 22948 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 28081 (http) with context path '/'
+2026-04-08T15:13:47.895-07:00  INFO 22948 --- [           main] o.a.maven.surefire.booter.ForkedBooter   : Started ForkedBooter in 0.069 seconds (process running for 2.884)
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::               (v3.5.13)
+
+2026-04-08T15:13:47.902-07:00  INFO 22948 --- [           main] o.a.maven.surefire.booter.ForkedBooter   : Starting ForkedBooter v3.5.5 using Java 17.0.17 with PID 22948 (started by jasmainekhale in /Users/jasmainekhale/Desktop/kv-service)
+2026-04-08T15:13:47.902-07:00  INFO 22948 --- [           main] o.a.maven.surefire.booter.ForkedBooter   : The following 1 profile is active: "test"
+2026-04-08T15:13:47.938-07:00  INFO 22948 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 28082 (http)
+2026-04-08T15:13:47.938-07:00  INFO 22948 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-04-08T15:13:47.938-07:00  INFO 22948 --- [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.53]
+2026-04-08T15:13:47.942-07:00  INFO 22948 --- [           main] o.a.c.c.C.[Tomcat-2].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2026-04-08T15:13:47.942-07:00  INFO 22948 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 39 ms
+2026-04-08T15:13:47.964-07:00  INFO 22948 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 28082 (http) with context path '/'
+2026-04-08T15:13:47.965-07:00  INFO 22948 --- [           main] o.a.maven.surefire.booter.ForkedBooter   : Started ForkedBooter in 0.069 seconds (process running for 2.954)
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::               (v3.5.13)
+
+2026-04-08T15:13:47.971-07:00  INFO 22948 --- [           main] o.a.maven.surefire.booter.ForkedBooter   : Starting ForkedBooter v3.5.5 using Java 17.0.17 with PID 22948 (started by jasmainekhale in /Users/jasmainekhale/Desktop/kv-service)
+2026-04-08T15:13:47.971-07:00  INFO 22948 --- [           main] o.a.maven.surefire.booter.ForkedBooter   : The following 1 profile is active: "test"
+2026-04-08T15:13:48.008-07:00  INFO 22948 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 28083 (http)
+2026-04-08T15:13:48.008-07:00  INFO 22948 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-04-08T15:13:48.008-07:00  INFO 22948 --- [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.53]
+2026-04-08T15:13:48.012-07:00  INFO 22948 --- [           main] o.a.c.c.C.[Tomcat-3].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2026-04-08T15:13:48.012-07:00  INFO 22948 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 40 ms
+2026-04-08T15:13:48.041-07:00  INFO 22948 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 28083 (http) with context path '/'
+2026-04-08T15:13:48.043-07:00  INFO 22948 --- [           main] o.a.maven.surefire.booter.ForkedBooter   : Started ForkedBooter in 0.076 seconds (process running for 3.031)
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::               (v3.5.13)
+
+2026-04-08T15:13:48.049-07:00  INFO 22948 --- [           main] o.a.maven.surefire.booter.ForkedBooter   : Starting ForkedBooter v3.5.5 using Java 17.0.17 with PID 22948 (started by jasmainekhale in /Users/jasmainekhale/Desktop/kv-service)
+2026-04-08T15:13:48.049-07:00  INFO 22948 --- [           main] o.a.maven.surefire.booter.ForkedBooter   : The following 1 profile is active: "test"
+2026-04-08T15:13:48.083-07:00  INFO 22948 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 28084 (http)
+2026-04-08T15:13:48.083-07:00  INFO 22948 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-04-08T15:13:48.083-07:00  INFO 22948 --- [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.53]
+2026-04-08T15:13:48.086-07:00  INFO 22948 --- [           main] o.a.c.c.C.[Tomcat-4].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2026-04-08T15:13:48.087-07:00  INFO 22948 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 37 ms
+2026-04-08T15:13:48.104-07:00  INFO 22948 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 28084 (http) with context path '/'
+2026-04-08T15:13:48.106-07:00  INFO 22948 --- [           main] o.a.maven.surefire.booter.ForkedBooter   : Started ForkedBooter in 0.062 seconds (process running for 3.094)
+2026-04-08T15:13:48.107-07:00  INFO 22948 --- [io-28080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-04-08T15:13:48.107-07:00  INFO 22948 --- [io-28080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-04-08T15:13:48.107-07:00  INFO 22948 --- [io-28080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2026-04-08T15:13:48.109-07:00  INFO 22948 --- [io-28081-exec-1] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-04-08T15:13:48.109-07:00  INFO 22948 --- [io-28081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-04-08T15:13:48.109-07:00  INFO 22948 --- [io-28081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2026-04-08T15:13:48.110-07:00  INFO 22948 --- [io-28082-exec-1] o.a.c.c.C.[Tomcat-2].[localhost].[/]     : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-04-08T15:13:48.110-07:00  INFO 22948 --- [io-28082-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-04-08T15:13:48.110-07:00  INFO 22948 --- [io-28082-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2026-04-08T15:13:48.111-07:00  INFO 22948 --- [io-28083-exec-1] o.a.c.c.C.[Tomcat-3].[localhost].[/]     : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-04-08T15:13:48.111-07:00  INFO 22948 --- [io-28083-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-04-08T15:13:48.112-07:00  INFO 22948 --- [io-28083-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2026-04-08T15:13:48.113-07:00  INFO 22948 --- [io-28084-exec-1] o.a.c.c.C.[Tomcat-4].[localhost].[/]     : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-04-08T15:13:48.113-07:00  INFO 22948 --- [io-28084-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-04-08T15:13:48.113-07:00  INFO 22948 --- [io-28084-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2026-04-08T15:13:49.232-07:00  INFO 22948 --- [           main] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2026-04-08T15:13:49.235-07:00  INFO 22948 --- [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2026-04-08T15:13:49.250-07:00  INFO 22948 --- [           main] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2026-04-08T15:13:49.252-07:00  INFO 22948 --- [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2026-04-08T15:13:49.255-07:00  INFO 22948 --- [           main] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2026-04-08T15:13:49.256-07:00  INFO 22948 --- [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2026-04-08T15:13:49.259-07:00  INFO 22948 --- [           main] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2026-04-08T15:13:49.260-07:00  INFO 22948 --- [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2026-04-08T15:13:49.262-07:00  INFO 22948 --- [           main] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2026-04-08T15:13:49.263-07:00  INFO 22948 --- [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+]]></system-out>
+  </testcase>
+  <testcase name="test3_exposeInconsistency_w1_r1" classname="com.cs6650.kvstore.LeaderFollowerConsistencyTest" time="1.507">
+    <system-out><![CDATA[
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::               (v3.5.13)
+
+2026-04-08T15:13:49.279-07:00  INFO 22948 --- [           main] o.a.maven.surefire.booter.ForkedBooter   : Starting ForkedBooter v3.5.5 using Java 17.0.17 with PID 22948 (started by jasmainekhale in /Users/jasmainekhale/Desktop/kv-service)
+2026-04-08T15:13:49.279-07:00  INFO 22948 --- [           main] o.a.maven.surefire.booter.ForkedBooter   : The following 1 profile is active: "test"
+2026-04-08T15:13:49.448-07:00  INFO 22948 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 28080 (http)
+2026-04-08T15:13:49.448-07:00  INFO 22948 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-04-08T15:13:49.448-07:00  INFO 22948 --- [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.53]
+2026-04-08T15:13:49.455-07:00  INFO 22948 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-04-08T15:13:49.455-07:00  INFO 22948 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 174 ms
+2026-04-08T15:13:49.472-07:00  INFO 22948 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 28080 (http) with context path '/'
+2026-04-08T15:13:49.474-07:00  INFO 22948 --- [           main] o.a.maven.surefire.booter.ForkedBooter   : Started ForkedBooter in 0.207 seconds (process running for 4.462)
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::               (v3.5.13)
+
+2026-04-08T15:13:49.480-07:00  INFO 22948 --- [           main] o.a.maven.surefire.booter.ForkedBooter   : Starting ForkedBooter v3.5.5 using Java 17.0.17 with PID 22948 (started by jasmainekhale in /Users/jasmainekhale/Desktop/kv-service)
+2026-04-08T15:13:49.480-07:00  INFO 22948 --- [           main] o.a.maven.surefire.booter.ForkedBooter   : The following 1 profile is active: "test"
+2026-04-08T15:13:49.510-07:00  INFO 22948 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 28081 (http)
+2026-04-08T15:13:49.510-07:00  INFO 22948 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-04-08T15:13:49.510-07:00  INFO 22948 --- [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.53]
+2026-04-08T15:13:49.516-07:00  INFO 22948 --- [           main] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2026-04-08T15:13:49.516-07:00  INFO 22948 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 36 ms
+2026-04-08T15:13:49.534-07:00  INFO 22948 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 28081 (http) with context path '/'
+2026-04-08T15:13:49.536-07:00  INFO 22948 --- [           main] o.a.maven.surefire.booter.ForkedBooter   : Started ForkedBooter in 0.061 seconds (process running for 4.524)
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::               (v3.5.13)
+
+2026-04-08T15:13:49.541-07:00  INFO 22948 --- [           main] o.a.maven.surefire.booter.ForkedBooter   : Starting ForkedBooter v3.5.5 using Java 17.0.17 with PID 22948 (started by jasmainekhale in /Users/jasmainekhale/Desktop/kv-service)
+2026-04-08T15:13:49.541-07:00  INFO 22948 --- [           main] o.a.maven.surefire.booter.ForkedBooter   : The following 1 profile is active: "test"
+2026-04-08T15:13:49.575-07:00  INFO 22948 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 28082 (http)
+2026-04-08T15:13:49.576-07:00  INFO 22948 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-04-08T15:13:49.576-07:00  INFO 22948 --- [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.53]
+2026-04-08T15:13:49.579-07:00  INFO 22948 --- [           main] o.a.c.c.C.[Tomcat-2].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2026-04-08T15:13:49.579-07:00  INFO 22948 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 37 ms
+2026-04-08T15:13:49.595-07:00  INFO 22948 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 28082 (http) with context path '/'
+2026-04-08T15:13:49.596-07:00  INFO 22948 --- [           main] o.a.maven.surefire.booter.ForkedBooter   : Started ForkedBooter in 0.06 seconds (process running for 4.584)
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::               (v3.5.13)
+
+2026-04-08T15:13:49.602-07:00  INFO 22948 --- [           main] o.a.maven.surefire.booter.ForkedBooter   : Starting ForkedBooter v3.5.5 using Java 17.0.17 with PID 22948 (started by jasmainekhale in /Users/jasmainekhale/Desktop/kv-service)
+2026-04-08T15:13:49.602-07:00  INFO 22948 --- [           main] o.a.maven.surefire.booter.ForkedBooter   : The following 1 profile is active: "test"
+2026-04-08T15:13:49.632-07:00  INFO 22948 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 28083 (http)
+2026-04-08T15:13:49.633-07:00  INFO 22948 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-04-08T15:13:49.633-07:00  INFO 22948 --- [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.53]
+2026-04-08T15:13:49.636-07:00  INFO 22948 --- [           main] o.a.c.c.C.[Tomcat-3].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2026-04-08T15:13:49.636-07:00  INFO 22948 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 34 ms
+2026-04-08T15:13:49.651-07:00  INFO 22948 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 28083 (http) with context path '/'
+2026-04-08T15:13:49.652-07:00  INFO 22948 --- [           main] o.a.maven.surefire.booter.ForkedBooter   : Started ForkedBooter in 0.056 seconds (process running for 4.64)
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::               (v3.5.13)
+
+2026-04-08T15:13:49.657-07:00  INFO 22948 --- [           main] o.a.maven.surefire.booter.ForkedBooter   : Starting ForkedBooter v3.5.5 using Java 17.0.17 with PID 22948 (started by jasmainekhale in /Users/jasmainekhale/Desktop/kv-service)
+2026-04-08T15:13:49.657-07:00  INFO 22948 --- [           main] o.a.maven.surefire.booter.ForkedBooter   : The following 1 profile is active: "test"
+2026-04-08T15:13:49.691-07:00  INFO 22948 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 28084 (http)
+2026-04-08T15:13:49.691-07:00  INFO 22948 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-04-08T15:13:49.691-07:00  INFO 22948 --- [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.53]
+2026-04-08T15:13:49.694-07:00  INFO 22948 --- [           main] o.a.c.c.C.[Tomcat-4].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2026-04-08T15:13:49.694-07:00  INFO 22948 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 36 ms
+2026-04-08T15:13:49.710-07:00  INFO 22948 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 28084 (http) with context path '/'
+2026-04-08T15:13:49.711-07:00  INFO 22948 --- [           main] o.a.maven.surefire.booter.ForkedBooter   : Started ForkedBooter in 0.058 seconds (process running for 4.7)
+2026-04-08T15:13:49.713-07:00  INFO 22948 --- [io-28080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-04-08T15:13:49.713-07:00  INFO 22948 --- [io-28080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-04-08T15:13:49.713-07:00  INFO 22948 --- [io-28080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2026-04-08T15:13:49.714-07:00  INFO 22948 --- [io-28081-exec-1] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-04-08T15:13:49.714-07:00  INFO 22948 --- [io-28081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-04-08T15:13:49.714-07:00  INFO 22948 --- [io-28081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2026-04-08T15:13:49.715-07:00  INFO 22948 --- [io-28082-exec-1] o.a.c.c.C.[Tomcat-2].[localhost].[/]     : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-04-08T15:13:49.715-07:00  INFO 22948 --- [io-28082-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-04-08T15:13:49.716-07:00  INFO 22948 --- [io-28082-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2026-04-08T15:13:49.717-07:00  INFO 22948 --- [io-28083-exec-1] o.a.c.c.C.[Tomcat-3].[localhost].[/]     : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-04-08T15:13:49.717-07:00  INFO 22948 --- [io-28083-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-04-08T15:13:49.717-07:00  INFO 22948 --- [io-28083-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2026-04-08T15:13:49.718-07:00  INFO 22948 --- [io-28084-exec-1] o.a.c.c.C.[Tomcat-4].[localhost].[/]     : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-04-08T15:13:49.718-07:00  INFO 22948 --- [io-28084-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-04-08T15:13:49.718-07:00  INFO 22948 --- [io-28084-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2026-04-08T15:13:49.986-07:00  INFO 22948 --- [           main] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2026-04-08T15:13:49.987-07:00  INFO 22948 --- [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2026-04-08T15:13:49.989-07:00  INFO 22948 --- [           main] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2026-04-08T15:13:50.155-07:00  INFO 22948 --- [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2026-04-08T15:13:50.157-07:00  INFO 22948 --- [           main] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2026-04-08T15:13:50.378-07:00  INFO 22948 --- [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2026-04-08T15:13:50.379-07:00  INFO 22948 --- [           main] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2026-04-08T15:13:50.601-07:00  INFO 22948 --- [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2026-04-08T15:13:50.603-07:00  INFO 22948 --- [           main] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2026-04-08T15:13:50.767-07:00  INFO 22948 --- [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+]]></system-out>
+  </testcase>
+</testsuite>

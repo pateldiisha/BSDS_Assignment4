@@ -1,0 +1,14 @@
+server:
+  port: 8084
+
+kvstore:
+  node-id: node4
+  mode: leader-follower
+  role: follower
+  peers: []
+  quorum:
+    write: 3
+    read: 3
+  delays:
+    write-delay-ms: 200
+    read-delay-ms: 50

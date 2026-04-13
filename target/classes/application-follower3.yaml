@@ -1,0 +1,14 @@
+server:
+  port: 8083
+
+kvstore:
+  node-id: node3
+  mode: leader-follower
+  role: follower
+  peers: []
+  quorum:
+    write: 3
+    read: 3
+  delays:
+    write-delay-ms: 200
+    read-delay-ms: 50
